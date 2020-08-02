@@ -18,6 +18,7 @@ const slider = function(){
 
     // イベントリスナー (next)
     next.addEventListener("click", function(){
+        if(counter == sliderlist_item.length - 1) return; //ボタン連打対策
         prev.style.display = "block";
         sliderlist.style.transition = ".3s";
         counter ++;
@@ -33,6 +34,7 @@ const slider = function(){
 
     // イベントリスナー (prev)
     prev.addEventListener("click", function(){
+        if(counter == sliderlist_item.length - sliderlist_item.length) return; //ボタン連打対策
         next.style.display = "block";
         sliderlist.style.transition = ".3s";
         counter --;
